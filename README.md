@@ -25,8 +25,9 @@ cd C:\Users\YourUsername\AndroidStudioProjects
 #### 2. Clone the Project
 
 ```bash
-git clone <repository-url>
-cd sqlite
+git clone https://github.com/KevinLemein/sqlite.git
+
+OPEN THE PROJECT ON ANDROID STUDIO
 ```
 
 #### 3. Open in Android Studio
