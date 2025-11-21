@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +40,19 @@ public class MainActivity extends Activity {
                 int id_To_Search = arg2 + 1;
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", id_To_Search);
+                Intent intent = new Intent(getApplicationContext(), DisplayContact.class);
+                intent.putExtras(dataBundle);
+                startActivity(intent);
+            }
+        });
+
+        // ADD THIS: Floating Action Button click listener
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_add);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle dataBundle = new Bundle();
+                dataBundle.putInt("id", 0);
                 Intent intent = new Intent(getApplicationContext(), DisplayContact.class);
                 intent.putExtras(dataBundle);
                 startActivity(intent);
@@ -79,4 +93,3 @@ public class MainActivity extends Activity {
         return super.onKeyDown(keycode, event);
     }
 }
-
